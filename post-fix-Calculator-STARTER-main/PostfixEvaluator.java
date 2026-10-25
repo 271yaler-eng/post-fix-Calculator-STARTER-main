@@ -35,7 +35,7 @@ public class PostfixEvaluator {
             {
                 if (stacksize < 2) {
                     tokens.close();
-                    throw new PostFixException("Syntax error: Invalid equation");
+                    throw new PostFixException("Syntax error - Needs two oprators for one operand");
                 }
                 int first = stack.top();
                 stack.pop();
@@ -87,7 +87,7 @@ public class PostfixEvaluator {
         else
         {
             tokens.close();
-            throw new PostFixException("Not enough operands");
+            throw new PostFixException("Not enough operators");
         }
 
         // TODO 1: Process tokens one at a time.
