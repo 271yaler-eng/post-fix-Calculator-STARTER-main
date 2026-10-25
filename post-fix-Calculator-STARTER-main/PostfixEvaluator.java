@@ -35,7 +35,7 @@ public class PostfixEvaluator {
             {
                 if (stacksize < 2) {
                     tokens.close();
-                    throw new PostFixException("Syntax error");
+                    throw new PostFixException("Syntax error: Invalid equation");
                 }
                 int first = stack.top();
                 stack.pop();
@@ -60,7 +60,7 @@ public class PostfixEvaluator {
                     if(first == 0)
                     {
                         tokens.close();
-                        throw new ArithmeticException("Syntax error");
+                        throw new ArithmeticException("Syntax error: Cannot divide by 0");
                     }
                     solution = second / first;
                 }
